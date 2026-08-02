@@ -68,4 +68,128 @@ print("Kelimenin uzunluğu:",kelime_uzunluk)
 metin="hello"
 print(metin.replace("h","H"))
 
+##veri tipi kontrolü
+x=20
+print(type(x))
 
+x="25" #type string
+print(type(int(x))) #type dönüşümü (casting)
+
+##listeler
+sayilar=[3,4,5,6]
+karisik=[1,2,"x","y",3.14]
+print("Sayılar:",sayilar)
+
+print(karisik[1])
+
+print(len(sayilar)) 
+
+#slicing
+harfler=["a","b","c","d","e","f","g"]
+print(harfler[1:4])
+print(harfler[:3]) 
+print(harfler[4:])        
+
+harfler.append("h") #eleman ekleme
+print(harfler)
+
+harfler.insert(1,"x") #belirli bir indexe eleman ekleme
+print(harfler)
+
+harfler.remove("h") #eleman silme
+print(harfler)
+
+harfler.pop() #son elemanı silme
+print(harfler)
+
+harfler.pop(1) #belirli bir indexteki elemanı silme
+print(harfler)
+
+##tuple
+koordinatlar=(10,20)
+print(koordinatlar)
+print(koordinatlar[0])
+
+#tek elemanlı tuple
+x=(4) #bu ifade x=5 ile aynı, print(type(x)) int sonucu verir
+x=(4,) #print(type(x)) = <class 'tuple>
+
+#unpacking
+koordinat=(20,30)
+x,y=koordinat
+print(x)
+print(y)
+
+t=(20,20,30,30,30,40)
+print(t.count(30))
+
+##dictionary
+ogrenci= {
+    "isim":"Elif", 
+    "yas":19,
+    "bolum":"Yazılım"
+}
+
+print(ogrenci)
+print(ogrenci["isim"])
+
+ogrenci["ortalama"]=3.5
+print(ogrenci)
+
+del ogrenci["yas"]
+print(ogrenci)
+
+print(ogrenci.keys())
+print(ogrenci.values())
+print(ogrenci.items())
+
+##set
+sayilar={1,1,2,3,4,5}
+print(sayilar) #tekrar eden elemanlar set içinde sadece bir kez yer alır
+#indeks yoktur
+
+liste=[1,1,2,2,2,3,4]
+benzersiz=set(liste)
+print(benzersiz)
+
+sayilar.add(6)
+print(sayilar)
+
+sayilar.remove(4)
+print(sayilar)
+
+a={1,3,5,7}
+b={5,7,9,13,14}
+print(a.union(b)) #birleşim
+print(a.intersection(b)) #kesişim
+print(a.difference(b)) #fark
+print(b.difference(a)) #fark
+
+"""
+liste:
+    - sıralıdır, değiştirilebilir, tekrar eden elemanlara izin verir
+    - liste = [1, 2, 3]
+    - kullanım: eleman sırası önemliyse, veri güncellenecekse
+    - numpy arrayin temelini oluşturmaktadır
+
+Tuple:
+    - sıralıdır, değiştirilemez, tekrar eden elemanlara izin verir
+    - tuple = (1, 2, 3, 4)    
+    - kullanım: veri sabit kalacaksa, güvenli yapı gerekiyorsa
+
+dictionary:
+    - anahtar-değer (key-value pair)
+    - anahtarlar benzersizdir
+    - değerler tekrar edebilir
+    - değiştirilebilir
+    - ogrenci = {"isim":"kaan", "yas": 35}
+    - anlamlı veri saklamak, etiketli veri tutmak
+    - pandas dataframe temelini oluşturur
+
+Set:
+    - sırasızdır, tekrar eden elemanları kabul etmez, değiştirilebilir
+    - set = {1, 2, 3, 4}
+    - kullanım: tekrar eden değerleri temizlemek için, küme işlemleri yapmak için
+
+
+"""
